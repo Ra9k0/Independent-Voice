@@ -49,7 +49,8 @@ export default function(){
         <div className="track">
             {weatherData.map((item, index) => (
                 <div key={index} className="card">
-                    <h1 key={index}>{item.name} {item.weather.main.temp}</h1>
+                    <p>{item.name}</p>
+                    <p>{item.weather.main.temp}</p>
                 </div>
             ))}
         </div>
