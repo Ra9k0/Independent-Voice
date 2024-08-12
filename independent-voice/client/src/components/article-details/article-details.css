@@ -1,0 +1,119 @@
+.article-container {
+    width: 80%;
+    max-width: 1400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.article-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.article-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.like-dislike {
+    display: flex;
+    gap: 10px;
+}
+
+.like-btn, .dislike-btn, .share-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.like-btn:hover, .dislike-btn:hover, .share-btn:hover {
+    background-color: #0056b3;
+}
+
+.like-count, .dislike-count {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.comment-form {
+    margin-bottom: 20px;
+}
+
+#comment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.submit-comment {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-comment:hover {
+    background-color: #218838;
+}
+
+.comments-list .comment {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comments-list .comment p {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.comments-list .comment strong {
+    font-weight: bold;
+}
