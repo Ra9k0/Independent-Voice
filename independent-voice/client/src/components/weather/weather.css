@@ -1,12 +1,11 @@
 .wrapper {
 	background-color: #E1E2E2;
-	height: 130px;
+	height: auto;
 	overflow: hidden;
-	position: relative;
-	width: 100%;
 	display: flex;
 	align-items: center;
 	padding: 0 20px;
+	min-width: 1920px;
 }
 
 .wrapper:after {
@@ -22,31 +21,103 @@
 
 .wrapper .track {
 	display: flex;
-	width: 100vw; /* Adjust to the number of items you have */
-	animation: scroll 60s linear infinite; /* Adjust the duration for speed */
+	width: auto;
+	/* Adjust to the number of items you have */
+	animation: scroll 60s linear infinite;
+	/* Adjust the duration for speed */
 }
 
-.wrapper .card {
-	width: 150px;
-	max-height: 90px;
-    display: flex;
+/* From Uiverse.io by vinodjangid07 */
+.cardContainer {
+	width: fit-content;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	position: relative;
+	width: 145px;
+	height: 175px;
+	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: space-between;
-    background-color: orange;
-    border: 1px solid black;
-    margin: 5px;
+	padding: 10px 5px;
+	border-radius: 10px;
+	backdrop-filter: blur(30px);
+	background-color: darkslategray;
+	border: 1px solid rgba(255, 255, 255, 0.089);
+	margin: 5px;
 }
 
-.wrapper .card p {
-	height: auto;
+.city {
+	font-weight: 700;
+	font-size: 0.9em;
+	letter-spacing: 1.2px;
+	color: white;
 	text-align: center;
 }
 
+.weather {
+	font-weight: 500;
+	font-size: 0.7em;
+	letter-spacing: 1.2px;
+	color: rgb(197, 197, 197);
+}
+
+.temp {
+	font-size: 1.8em;
+	color: white;
+}
+
+.minmaxContainer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.min,
+.max {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	padding: 0px 20px;
+	gap: 4px;
+}
+
+.max {
+	align-items: flex-start;
+	border-left: 2px solid white;
+}
+
+.maxHeading,
+.minHeading {
+	font-size: 0.9em;
+	font-weight: 600;
+	color: white;
+}
+
+.maxTemp,
+.minTemp {
+	font-size: 0.9em;
+	font-weight: 500;
+	color: rgb(197, 197, 197);
+}
+
+
 @keyframes scroll {
 	from {
-		transform: translateX(100%); /* Start from the right edge */
+		transform: translateX(75%);
+		/* Start from the right edge */
 	}
+
 	to {
-		transform: translateX(-100%); /* End at the left edge */
+		transform: translateX(-100%);
+		/* End at the left edge */
 	}
 }

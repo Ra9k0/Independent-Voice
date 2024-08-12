@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './article-details.css';
 import * as articleService from "../../service/articleService";
+import Loading from '../loading/Loading';
 
 const ArticleDetails = () => {
     const { articleId } = useParams();
@@ -20,6 +21,7 @@ const ArticleDetails = () => {
         const fetchArticle = async () => {
             try {
                 const response = await articleService.getOne(articleId);
+                console.log(response);
                 setArticle(response); // Assuming response contains the article data
                 if (response) {
                     setLikeCount(response.likes || 0);
@@ -43,54 +45,55 @@ const ArticleDetails = () => {
             setCommentText('');
         }
     };
-
     if (!article) {
-        return <p>Loading...</p>;
+        return <Loading />;
     }
 
     return (
-        <div className="article-container">
-            <header className="article-header">
-                <h1>{article.title}</h1>
-                <p className="article-meta">Published on {article._createdOn}, by John Doe</p>
-            </header>
+        <div className="container">
+            <div className="article-container">
+                <header className="article-header">
+                    <h1>{article.title}</h1>
+                    <p className="article-meta">Published on {article._createdOn}, by John Doe</p>
+                </header>
 
-            <div className="article-content">
-                <img src="news-image.jpg" alt="News" className="article-image" />
-                <p>{article.content}</p>
-                <p>Phasellus sit amet turpis a odio bibendum tincidunt. Integer fermentum nisi sit amet purus ultricies, nec fermentum orci vehicula. Sed sed nisi ac quam efficitur vulputate.</p>
+                <div className="article-content">
+                    <img src="news-image.jpg" alt="News" className="article-image" />
+                    <p>{article.content}</p>
+                    <p>Phasellus sit amet turpis a odio bibendum tincidunt. Integer fermentum nisi sit amet purus ultricies, nec fermentum orci vehicula. Sed sed nisi ac quam efficitur vulputate.</p>
+                </div>
+
+                <div className="article-actions">
+                    <div className="like-dislike">
+                        <button className="like-btn" onClick={handleLike}>👍 Like <span className="like-count">{likeCount}</span></button>
+                        <button className="dislike-btn" onClick={handleDislike}>👎 Dislike <span className="dislike-count">{dislikeCount}</span></button>
+                    </div>
+                    <div className="share-buttons">
+                        <button className="share-btn">Share on Twitter</button>
+                        <button className="share-btn">Share on Facebook</button>
+                    </div>
+                </div>
+
+                <section className="comments-section">
+                    <h2>Comments</h2>
+                    <div className="comment-form">
+                        <textarea
+                            id="comment-input"
+                            value={commentText}
+                            onChange={handleCommentChange}
+                            placeholder="Write your comment here..."
+                        ></textarea>
+                        <button className="submit-comment" onClick={handleCommentSubmit}>Post Comment</button>
+                    </div>
+                    <div className="comments-list">
+                        {comments.map((comment, index) => (
+                            <div className="comment" key={index}>
+                                <p><strong>{comment.name}:</strong> {comment.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
-
-            <div className="article-actions">
-                <div className="like-dislike">
-                    <button className="like-btn" onClick={handleLike}>👍 Like <span className="like-count">{likeCount}</span></button>
-                    <button className="dislike-btn" onClick={handleDislike}>👎 Dislike <span className="dislike-count">{dislikeCount}</span></button>
-                </div>
-                <div className="share-buttons">
-                    <button className="share-btn">Share on Twitter</button>
-                    <button className="share-btn">Share on Facebook</button>
-                </div>
-            </div>
-
-            <section className="comments-section">
-                <h2>Comments</h2>
-                <div className="comment-form">
-                    <textarea
-                        id="comment-input"
-                        value={commentText}
-                        onChange={handleCommentChange}
-                        placeholder="Write your comment here..."
-                    ></textarea>
-                    <button className="submit-comment" onClick={handleCommentSubmit}>Post Comment</button>
-                </div>
-                <div className="comments-list">
-                    {comments.map((comment, index) => (
-                        <div className="comment" key={index}>
-                            <p><strong>{comment.name}:</strong> {comment.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
         </div>
     );
 };

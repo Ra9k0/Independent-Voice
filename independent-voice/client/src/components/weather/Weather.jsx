@@ -1,5 +1,6 @@
 import React from 'react';
 import './weather.css'
+import WeatherEmoji from './weather-emoji/WeatherEmoji'
 import { useState, useEffect } from 'react';
 import fetchWeather from '/src/APIs/weatherAPI.js';
 
@@ -21,9 +22,9 @@ const cities = [
     { name: 'Ямбол', lat: 42.4833, lon: 26.5000 },
     { name: 'Велико Търново', lat: 43.0833, lon: 25.6167 },
     { name: 'Габрово', lat: 42.8667, lon: 25.3333 }
-  ];
+];
 
-export default function(){
+export default function () {
     const [weatherData, setWeatherData] = useState([]);
 
     const updateWeatherData = async () => {
@@ -33,6 +34,7 @@ export default function(){
                 return { ...city, weather };
             })
         );
+
         setWeatherData(data);
     };
 
@@ -43,18 +45,41 @@ export default function(){
         return () => clearInterval(intervalId); // Clean up interval on component unmount
     }, []);
 
-
-    return(
-    <div className="wrapper">
-        <div className="track">
-            {weatherData.map((item, index) => (
-                <div key={index} className="card">
-                    <p>{item.name}</p>
-                    <p>{item.weather.main.temp}</p>
+    return (
+        <div className="wrapper">
+            <div className="track">
+                {weatherData.map((item, index) => (
+                    <div key={index} className="cardContainer">
+                    <div className="card">
+                        <p className="city">{item.name}</p>
+                        <p className="weather">{item.weather.weather[0].main}</p>
+                        <svg
+                            className="weather"
+                            version="1.1"
+                            id="Layer_1"
+                            x="0px"
+                            y="0px"
+                            width="50px"
+                            height="50px"
+                            viewBox="0 0 100 100">
+                            <WeatherEmoji icon={item.weather.weather[0].icon} />
+                        </svg>
+                        <p className="temp">{Math.round(item.weather.main.temp)}</p>
+                        <div className="minmaxContainer">
+                            <div className="min">
+                                <p className="minHeading">Min</p>
+                                <p className="minTemp">{Math.round(item.weather.main.temp_min)}</p>
+                            </div>
+                            <div className="max">
+                                <p className="maxHeading">Max</p>
+                                <p className="maxTemp">{Math.round(item.weather.main.temp_max)}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            ))}
+                ))}
+            </div>
         </div>
-    </div>
 
     )
 }

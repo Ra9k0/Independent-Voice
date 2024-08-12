@@ -1,27 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './news-grid.css';
+import * as articleService from "../../../service/articleService";
 import { Link } from 'react-router-dom';
+import Loading from '../../loading/Loading';
 
 const NewsGrid = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await articleService.getAll();
+        setArticles(response);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
+  if (loading) return <Loading />;;
+  if (error) return <p>Error loading articles: {error.message}</p>;
+
+  const firstArticle = articles[0];
+  const topArticles = articles.slice(1, 5);
+  const bottomArticles = articles.slice(5,10);
   return (
-    <>
-    <div className="flex-container">
-      <div className="flex-item big-item">1</div>
-      <div className="small-items-container">
-        <Link to='/Details/c4a3a739-92e8-411e-bc9b-11e5387a2f0f' className="flex-item small-item">2</Link>
-        <a className="flex-item small-item">3</a>
-        <a className="flex-item small-item">4</a>
-        <a className="flex-item small-item">5</a>
+    <div>
+      <div className="flex-container">
+          <Link
+              to={`/Details/${firstArticle._id}`}
+              className="flex-item big-item"
+              style={{ fontSize: '50px' }}
+            >  
+                <span>{firstArticle.title}</span>
+          </Link>
+        <div className="small-items-container">
+          {topArticles.map((article) => (
+            <Link
+              key={article._id}
+              to={`/Details/${article._id}`}
+              className="flex-item small-item"
+              style={{ fontSize: '30px' }}
+            >
+              <span>{article.title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="flex-bottom-container">
+        {bottomArticles.map((article) => (
+          <Link
+          key={article._id}
+          to={`/Details/${article._id}`}
+          className="flex-item small-item"
+          style={{ fontSize: '25px' }}
+        >
+            <span>{article.title}</span>
+          </Link>
+        ))}
       </div>
     </div>
-    <div className="flex-bottom-container">
-      <a className="flex-item small-item">6</a>
-      <a className="flex-item small-item">7</a>
-      <a className="flex-item small-item">8</a>
-      <a className="flex-item small-item">9</a>
-      <a className="flex-item small-item">10</a>
-    </div>
-  </>   
   );
 };
 

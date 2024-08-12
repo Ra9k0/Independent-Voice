@@ -9,6 +9,7 @@
 
 .flex-item {
     background-color: #d3d3d3;
+    position:relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,8 +21,8 @@
 .big-item {
     flex: 2;
     height: 100%;
-    min-height: 13em;
-    max-width: 25em;
+    min-height: 500px;
+    max-width: 700px;
 }
 
 .small-items-container {
@@ -32,19 +33,25 @@
 }
 
 .small-item {
-    flex: 1 1 calc(50% - 10px); /* Two items per row, accounting for the gap */
-    min-height: 6em;           /* Ensures a minimum height */
+    flex: 1 1 calc(50% - 10px);
 }
 
-.flex-bottom-container{
+.flex-bottom-container {
     display: flex;
     gap: 10px;
     padding: 10px;
     max-width: 100%;
     margin: auto;
+    min-height: 200px;
 }
 
-/* Responsive Design */
+span {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .flex-container {
         flex-direction: column;
