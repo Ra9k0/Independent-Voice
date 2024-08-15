@@ -1,0 +1,13 @@
+.register-image-container img {
+    max-width: 50%;
+    height: auto;
+}
+
+.register-form {
+    max-width: 25em;
+}
+
+.register-image-container {
+    display: flex;
+    justify-content: center;
+}

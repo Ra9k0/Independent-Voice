@@ -1344,125 +1344,125 @@
             "c4a3a739-92e8-411e-bc9b-11e5387a2f0f": {
                 "title": "Breaking: Market Hits Record Highs",
                 "content": "Today, the stock market reached unprecedented levels, with the S&P 500 closing at an all-time high...",
-                "authorId": "d0a48a63-55fc-44e9-8a34-5e80a3c9f82c",
+                "authorId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "likes": 234,
                 "dislikes": 10,
-                "_createdOn": 1626236790262,
-                "_updatedOn": 1626236792930,
-                "image": "https://example.com/images/tech-giant-ai.jpg"
+                "_createdOn": "2024-08-10T12:00:00Z",
+                "_updatedOn": "2024-08-10T12:00:00Z",
+                "image": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
             },
             "a7f9ba1c-479e-4d9b-95f7-23c22c45c5e3": {
                 "title": "Local Startup Disrupts Industry",
                 "content": "A new local startup is making waves in the tech industry with its innovative approach to cloud computing...",
-                "authorId": "f1b5a479-53f6-4f26-a28e-37f44a5a9e8b",
+                "authorId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "likes": 152,
                 "dislikes": 3,
-                "_createdOn": 1626236890262,
-                "_updatedOn": 1626236892930,
-                "image": "https://example.com/images/tech-giant-ai.jpg"
+                "_createdOn": "2024-08-11T12:00:00Z",
+                "_updatedOn": "2024-08-11T12:00:00Z",
+                "image": "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg"
             },
             "e1b7a5c1-9f67-4f6d-b28a-d7d93d6d2f87": {
                 "title": "Tech Giant Announces New AI Breakthrough",
                 "content": "In a major development, a leading tech company has unveiled a groundbreaking AI technology that promises to revolutionize various industries...",
-                "authorId": "a4b7c26d-59d2-47d1-8e1a-3d748c1e0c76",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "likes": 189,
                 "dislikes": 8,
-                "_createdOn": 1626236990262,
-                "_updatedOn": 1626236992930,
-                "image": "https://example.com/images/tech-giant-ai.jpg"
+                "_createdOn": "2024-08-12T12:00:00Z",
+                "_updatedOn": "2024-08-12T12:00:00Z",
+                "image": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
             },
             "c3a7b8d2-1c5d-4e3b-8d21-8e4f6a3e7b2e": {
                 "title": "City Council Approves New Green Space",
                 "content": "The city council has approved plans for a new green space in the downtown area, aiming to improve urban livability and provide recreational areas for residents...",
-                "authorId": "e6c0a88f-2b46-4d7a-a3a2-2e5d24b87ef9",
+                "authorId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "likes": 121,
                 "dislikes": 2,
-                "_createdOn": 1626237090262,
-                "_updatedOn": 1626237092930,
-                "image": "https://example.com/images/green-space.jpg"
+                "_createdOn": "2024-08-13T12:00:00Z",
+                "_updatedOn": "2024-08-13T12:00:00Z",
+                "image": "https://fps.cdnpk.net/images/home/subhome-ai.webp?w=649&h=649"
             },
             "d8a9e6b3-3c2e-45b3-88c4-1f4b8a9e5b23": {
                 "title": "Local School Receives Major Grant",
                 "content": "A local school has been awarded a significant grant to enhance its STEM programs, providing students with new resources and opportunities for hands-on learning...",
-                "authorId": "b9c8d7e2-4e5f-6d1a-9c3b-5f5e8a9f2c6a",
+                "authorId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "likes": 97,
                 "dislikes": 1,
-                "_createdOn": 1626237190262,
-                "_updatedOn": 1626237192930,
-                "image": "https://example.com/images/school-grant.jpg"
+                "_createdOn": "2024-08-14T12:00:00Z",
+                "_updatedOn": "2024-08-14T12:00:00Z",
+                "image": "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
             },
             "e4d6b8c2-2e1f-4a3d-9b8c-3e9b2a7d3e4e": {
                 "title": "Health Officials Report Decrease in Flu Cases",
                 "content": "Recent data from health officials indicate a significant decrease in flu cases this season, thanks to widespread vaccination efforts and public health measures...",
-                "authorId": "d8c9b7e4-5f1a-4d2b-8e4a-6f7c9a3e5b6d",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "likes": 144,
                 "dislikes": 4,
-                "_createdOn": 1626237290262,
-                "_updatedOn": 1626237292930,
-                "image": "https://example.com/images/flu-decrease.jpg"
+                "_createdOn": "2024-08-15T12:00:00Z",
+                "_updatedOn": "2024-08-15T12:00:00Z",
+                "image": "https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg"
             },
             "f2b5c8d6-4a3e-5f7a-9b2c-8e4f7a9d6b1a": {
                 "title": "New Art Exhibit Opens Downtown",
                 "content": "A new art exhibit showcasing local artists has opened in the downtown gallery, offering residents and visitors a chance to experience diverse and innovative artworks...",
-                "authorId": "c9d8b7e1-6f4a-3d2b-8a1b-4e5f7a9d6c3e",
+                "authorId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "likes": 113,
                 "dislikes": 6,
-                "_createdOn": 1626237390262,
-                "_updatedOn": 1626237392930,
-                "image": "https://example.com/images/art-exhibit.jpg"
+                "_createdOn": "2024-08-16T12:00:00Z",
+                "_updatedOn": "2024-08-16T12:00:00Z",
+                "image": "https://i0.wp.com/picjumbo.com/wp-content/uploads/breathtaking-bali-nature-free-photo.jpg?w=600&quality=80"
             },
             "g5a8b9d1-7e2f-4c3d-9b8a-7e6f1c2a4b9e": {
                 "title": "Major Sports Team Signs New Star Player",
                 "content": "The city’s major sports team has signed a new star player, adding excitement and anticipation for the upcoming season among fans and analysts alike...",
-                "authorId": "d7e9a1c2-5b6d-4f3a-8e2b-1c3d7f8a9e4b",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "likes": 176,
                 "dislikes": 7,
-                "_createdOn": 1626237490262,
-                "_updatedOn": 1626237492930,
-                "image": "https://example.com/images/sports-signing.jpg"
+                "_createdOn": "2024-08-17T12:00:00Z",
+                "_updatedOn": "2024-08-17T12:00:00Z",
+                "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
             },
             "h8b1a9c2-4d5e-6f7a-9b3c-1e4f7a6d9b2e": {
                 "title": "Innovative Renewable Energy Project Launched",
                 "content": "A new renewable energy project has been launched, aimed at increasing sustainability and reducing the city’s carbon footprint through cutting-edge technology...",
-                "authorId": "a1c2b3d4-5e6f-7d8a-9c1b-2e3f4a5d6b7c",
+                "authorId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "likes": 198,
                 "dislikes": 5,
-                "_createdOn": 1626237590262,
-                "_updatedOn": 1626237592930,
-                "image": "https://example.com/images/renewable-energy.jpg"
+                "_createdOn": "2024-08-18T12:00:00Z",
+                "_updatedOn": "2024-08-18T12:00:00Z",
+                "image": "https://i0.wp.com/picjumbo.com/wp-content/uploads/violet-colorful-sunset-sky-on-the-beach-free-photo.jpeg?w=600&quality=80"
             },
             "i9b2c3d4-5e6f-7a8b-9c2d-1e3f4a5b6c7e": {
                 "title": "New Technology Improves Internet Speeds",
                 "content": "A breakthrough in internet technology promises to dramatically improve connection speeds and reliability for users across the region...",
-                "authorId": "c8d9e1f2-3b4a-5c6d-7e8f-9a1b2c3d4e5f",
+                "authorId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "likes": 167,
                 "dislikes": 3,
-                "_createdOn": 1626237690262,
-                "_updatedOn": 1626237692930,
-                "image": "https://example.com/images/internet-speed.jpg"
+                "_createdOn": "2024-08-19T12:00:00Z",
+                "_updatedOn": "2024-08-19T12:00:00Z",
+                "image": "https://tinypng.com/images/social/website.jpg"
             },
             "j0b2a8c1-4e6f-5d7a-9b3c-2e4f1a9d7c8e": {
                 "title": "Local Farm Introduces Organic Produce",
                 "content": "A local farm has begun offering a new range of organic produce, catering to the growing demand for healthy and sustainably grown food options...",
-                "authorId": "d2c3b4e5-6f7a-8b9c-1d2e-3f4a5b6c7d8e",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "likes": 135,
                 "dislikes": 2,
-                "_createdOn": 1626237790262,
-                "_updatedOn": 1626237792930,
-                "image": "https://example.com/images/organic-produce.jpg"
+                "_createdOn": "2024-08-20T12:00:00Z",
+                "_updatedOn": "2024-08-20T12:00:00Z",
+                "image": "https://img.freepik.com/free-photo/colorful-design-with-spiral-design_188544-9588.jpg"
             },
             "k1c2d3e4-5f6a-7b8c-9d2e-1e3f4a5b6c7e": {
                 "title": "Community Center Hosts Annual Charity Event",
                 "content": "The community center is hosting its annual charity event, aiming to raise funds for local causes and bring the community together for a day of fun and philanthropy...",
-                "authorId": "e3b4c5d6-7f8a-9b1c-2d3e-4f5a6b7c8d9e",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "likes": 122,
                 "dislikes": 4,
-                "_createdOn": 1626237890262,
-                "_updatedOn": 1626237892930,
-                "image": "https://example.com/images/charity-event.jpg"
+                "_createdOn": "2024-08-21T12:00:00Z",
+                "_updatedOn": "2024-08-21T12:00:00Z",
+                "image": "https://st.depositphotos.com/66066078/56548/i/450/depositphotos_565485970-stock-photo-the-eifel-tower-in-the.jpg"
             }
-
         },
+
         comments: {
             "3f70ae1c-6248-4829-9105-d38303e77d0c": {
                 "newsId": "c4a3a739-92e8-411e-bc9b-11e5387a2f0f", // References news article "Market Hits Record Highs"

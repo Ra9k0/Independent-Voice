@@ -8,14 +8,15 @@
 }
 
 .flex-item {
-    background-color: #d3d3d3;
     position:relative;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .big-item {
@@ -45,11 +46,17 @@
     min-height: 200px;
 }
 
-span {
+.flex-item span {
     position: absolute;
     bottom: 10px;
     right: 10px;
     font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    transition: color 0.5s ease; 
+}
+.flex-item:hover span{
+    color: orange;
 }
 
 @media (max-width: 768px) {

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import './article-details.css';
-import * as articleService from "../../service/articleService";
+import * as articleService from "../../services/articleService";
 import Loading from '../loading/Loading';
+import AuthContext from '../../contexts/AuthContext';
 
 const ArticleDetails = () => {
     const { articleId } = useParams();
 
-    // State management for article data, likes, dislikes, and comments
     const [article, setArticle] = useState(null);
     const [likeCount, setLikeCount] = useState(0);
     const [dislikeCount, setDislikeCount] = useState(0);
@@ -16,26 +16,37 @@ const ArticleDetails = () => {
         { name: 'Bob', text: 'I disagree with some points here, but overall a good read.' }
     ]);
     const [commentText, setCommentText] = useState('');
+    
+    const [isLoading, setIsLoading] = useState(true);
+    const { userId } = useContext(AuthContext);
+    const isAuthenticated = !!userId;
+    const [loadEditButton, setLoadEditButton] = useState(false);
 
     useEffect(() => {
         const fetchArticle = async () => {
             try {
                 const response = await articleService.getOne(articleId);
-                console.log(response);
-                setArticle(response); // Assuming response contains the article data
+                setArticle(response);
                 if (response) {
-                    setLikeCount(response.likes || 0);
-                    setDislikeCount(response.dislikes || 0);
+                    setLikeCount(response.likes);
+                    setDislikeCount(response.dislikes);
                 }
+                setIsLoading(false);
             } catch (error) {
                 console.error('Error fetching article:', error);
+                setIsLoading(false);
             }
         };
 
         fetchArticle();
     }, [articleId]);
 
-    // Handlers for like, dislike, and comment actions
+    useEffect(() => {
+        if (!isLoading && (isAuthenticated && article.authorId == userId)) {
+            setLoadEditButton(true);
+        }
+    }, [isLoading]);
+
     const handleLike = () => setLikeCount(likeCount + 1);
     const handleDislike = () => setDislikeCount(dislikeCount + 1);
     const handleCommentChange = (e) => setCommentText(e.target.value);
@@ -45,20 +56,27 @@ const ArticleDetails = () => {
             setCommentText('');
         }
     };
-    if (!article) {
+    if (isLoading) {
         return <Loading />;
     }
 
     return (
         <div className="container">
             <div className="article-container">
+                {loadEditButton && (
+                <Link
+                    to={`/EditNew/${article._id}`}
+                    className="edit"
+                >
+                    Edit
+                </Link>)}
                 <header className="article-header">
                     <h1>{article.title}</h1>
-                    <p className="article-meta">Published on {article._createdOn}, by John Doe</p>
+                    <p className="article-meta">Published on {article._createdOn}, by {article.author.username}</p>
                 </header>
 
                 <div className="article-content">
-                    <img src="news-image.jpg" alt="News" className="article-image" />
+                    <img src={article.image} alt="News" className="article-image" />
                     <p>{article.content}</p>
                     <p>Phasellus sit amet turpis a odio bibendum tincidunt. Integer fermentum nisi sit amet purus ultricies, nec fermentum orci vehicula. Sed sed nisi ac quam efficitur vulputate.</p>
                 </div>
@@ -67,10 +85,6 @@ const ArticleDetails = () => {
                     <div className="like-dislike">
                         <button className="like-btn" onClick={handleLike}>👍 Like <span className="like-count">{likeCount}</span></button>
                         <button className="dislike-btn" onClick={handleDislike}>👎 Dislike <span className="dislike-count">{dislikeCount}</span></button>
-                    </div>
-                    <div className="share-buttons">
-                        <button className="share-btn">Share on Twitter</button>
-                        <button className="share-btn">Share on Facebook</button>
                     </div>
                 </div>
 

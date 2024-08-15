@@ -1,0 +1,51 @@
+/* RESET */
+
+.new-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+}
+
+/* Card Styling */
+.new-card {
+    background: #fff;
+    overflow: hidden;
+    width: 300px;
+    height: auto;
+    border-bottom: 1px solid gray;
+    margin-bottom: 2em;
+}
+
+.card-img {
+    height: 170px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid gray;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+    transition: color 0.5s ease; 
+}
+
+.card-date {
+    font-size: 0.875rem;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.card-author {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.card-content :hover .card-title{
+    color:orange;
+}

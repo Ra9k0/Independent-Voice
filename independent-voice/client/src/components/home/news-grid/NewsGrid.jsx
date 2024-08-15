@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './news-grid.css';
-import * as articleService from "../../../service/articleService";
+import * as articleService from "../../../services/articleService";
 import { Link } from 'react-router-dom';
 import Loading from '../../loading/Loading';
 
@@ -30,24 +30,24 @@ const NewsGrid = () => {
 
   const firstArticle = articles[0];
   const topArticles = articles.slice(1, 5);
-  const bottomArticles = articles.slice(5,10);
+  const bottomArticles = articles.slice(5, 10);
   return (
     <div>
       <div className="flex-container">
-          <Link
-              to={`/Details/${firstArticle._id}`}
-              className="flex-item big-item"
-              style={{ fontSize: '50px' }}
-            >  
-                <span>{firstArticle.title}</span>
-          </Link>
+        <Link
+          to={`/Details/${firstArticle._id}`}
+          className="flex-item big-item"
+          style={{ fontSize: '50px', backgroundImage: `url(${firstArticle.image})` }}
+        >
+          <span>{firstArticle.title}</span>
+        </Link>
         <div className="small-items-container">
           {topArticles.map((article) => (
             <Link
               key={article._id}
               to={`/Details/${article._id}`}
               className="flex-item small-item"
-              style={{ fontSize: '30px' }}
+              style={{ fontSize: '30px', backgroundImage: `url(${article.image})` }}
             >
               <span>{article.title}</span>
             </Link>
@@ -57,11 +57,11 @@ const NewsGrid = () => {
       <div className="flex-bottom-container">
         {bottomArticles.map((article) => (
           <Link
-          key={article._id}
-          to={`/Details/${article._id}`}
-          className="flex-item small-item"
-          style={{ fontSize: '25px' }}
-        >
+            key={article._id}
+            to={`/Details/${article._id}`}
+            className="flex-item small-item"
+            style={{ fontSize: '25px', backgroundImage: `url(${article.image})` }}
+          >
             <span>{article.title}</span>
           </Link>
         ))}

@@ -116,3 +116,15 @@
 .comments-list .comment strong {
     font-weight: bold;
 }
+
+.edit{
+    padding: 10px 5px;
+    background-color: lightblue;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 70px;
+    color: lightslategray;
+    font-weight: bold;
+    font-size: 20px;
+}
