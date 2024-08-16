@@ -34,9 +34,13 @@ export const create = async (article) => {
 };
 
 export const getArticlesByUser = async (userId) => {
-    const query = new URLSearchParams({ where: `authorId=${userId}` });
+    const query = new URLSearchParams({
+        where: `authorId="${userId}"`
+    })
     const result = await request.get(`${baseUrl}?${query}`);
     console.log(`${baseUrl}?${query}`)
 
     return result;
 };
+
+export const remove = async (newId) => request.remove(`${baseUrl}/${newId}`);

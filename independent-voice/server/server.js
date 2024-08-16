@@ -1465,20 +1465,16 @@
 
         comments: {
             "3f70ae1c-6248-4829-9105-d38303e77d0c": {
-                "newsId": "c4a3a739-92e8-411e-bc9b-11e5387a2f0f", // References news article "Market Hits Record Highs"
-                "authorId": "f1b5a479-53f6-4f26-a28e-37f44a5a9e8b", // References user "jane_smith"
+                "newsId": "c4a3a739-92e8-411e-bc9b-11e5387a2f0f",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "content": "This is amazing! Can't wait to see how the market evolves in the coming weeks.",
-                "likes": 25,
-                "dislikes": 0,
                 "_createdOn": 1626237890262,
                 "_updatedOn": 1626237892930
             },
             "8b3d4d99-25f2-49b3-89e4-d01758c3ec8e": {
-                "newsId": "a7f9ba1c-479e-4d9b-95f7-23c22c45c5e3", // References news article "Local Startup Disrupts Industry"
-                "authorId": "d0a48a63-55fc-44e9-8a34-5e80a3c9f82c", // References user "john_doe"
+                "newsId": "a7f9ba1c-479e-4d9b-95f7-23c22c45c5e3",
+                "authorId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "content": "This is a game-changer for the tech industry! Excited to see where this goes.",
-                "likes": 30,
-                "dislikes": 2,
                 "_createdOn": 1626237893262,
                 "_updatedOn": 1626237895123
             }

@@ -4,23 +4,19 @@ import './article-details.css';
 import * as articleService from "../../services/articleService";
 import Loading from '../loading/Loading';
 import AuthContext from '../../contexts/AuthContext';
+import * as commentService from "../../services/commentService";
 
 const ArticleDetails = () => {
     const { articleId } = useParams();
-
+    const { userId } = useContext(AuthContext);
     const [article, setArticle] = useState(null);
     const [likeCount, setLikeCount] = useState(0);
     const [dislikeCount, setDislikeCount] = useState(0);
-    const [comments, setComments] = useState([
-        { name: 'Alice', text: 'This is an interesting article! Thanks for sharing.' },
-        { name: 'Bob', text: 'I disagree with some points here, but overall a good read.' }
-    ]);
+    const [comments, setComments] = useState([]);
     const [commentText, setCommentText] = useState('');
-    
     const [isLoading, setIsLoading] = useState(true);
-    const { userId } = useContext(AuthContext);
-    const isAuthenticated = !!userId;
     const [loadEditButton, setLoadEditButton] = useState(false);
+    const isAuthenticated = !!userId;
 
     useEffect(() => {
         const fetchArticle = async () => {
@@ -38,7 +34,17 @@ const ArticleDetails = () => {
             }
         };
 
+        const fetchComments = async () => {
+            try {
+                const commentsResponse = await commentService.getCommentsByArticleId(articleId, userId);
+                setComments(commentsResponse);
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        };
+
         fetchArticle();
+        fetchComments();
     }, [articleId]);
 
     useEffect(() => {
@@ -50,12 +56,27 @@ const ArticleDetails = () => {
     const handleLike = () => setLikeCount(likeCount + 1);
     const handleDislike = () => setDislikeCount(dislikeCount + 1);
     const handleCommentChange = (e) => setCommentText(e.target.value);
-    const handleCommentSubmit = () => {
+    const handleCommentSubmit = async () => {
         if (commentText.trim() !== '') {
-            setComments([...comments, { name: 'You', text: commentText }]);
-            setCommentText('');
+            const newComment = {
+                authorId: userId,
+                content: commentText,
+                author: article.author,
+                newsId: articleId,
+                _createdOn: new Date().toISOString(),
+                _updatedOn: new Date().toISOString(),
+            };
+
+            try {
+                const savedComment = await commentService.addComment(newComment);
+                setComments([...comments, savedComment]);
+                setCommentText('');
+            } catch (error) {
+                console.error('Error posting comment:', error);
+            }
         }
     };
+
     if (isLoading) {
         return <Loading />;
     }
@@ -64,12 +85,8 @@ const ArticleDetails = () => {
         <div className="container">
             <div className="article-container">
                 {loadEditButton && (
-                <Link
-                    to={`/EditNew/${article._id}`}
-                    className="edit"
-                >
-                    Edit
-                </Link>)}
+                    <Link to={`/EditNew/${article._id}`} className="edit">Edit</Link>
+                )}
                 <header className="article-header">
                     <h1>{article.title}</h1>
                     <p className="article-meta">Published on {article._createdOn}, by {article.author.username}</p>
@@ -78,7 +95,6 @@ const ArticleDetails = () => {
                 <div className="article-content">
                     <img src={article.image} alt="News" className="article-image" />
                     <p>{article.content}</p>
-                    <p>Phasellus sit amet turpis a odio bibendum tincidunt. Integer fermentum nisi sit amet purus ultricies, nec fermentum orci vehicula. Sed sed nisi ac quam efficitur vulputate.</p>
                 </div>
 
                 <div className="article-actions">
@@ -100,9 +116,9 @@ const ArticleDetails = () => {
                         <button className="submit-comment" onClick={handleCommentSubmit}>Post Comment</button>
                     </div>
                     <div className="comments-list">
-                        {comments.map((comment, index) => (
+                        {comments.reverse().map((comment, index) => (
                             <div className="comment" key={index}>
-                                <p><strong>{comment.name}:</strong> {comment.text}</p>
+                                <p><strong>{comment.author.username}:</strong> {comment.content}</p>
                             </div>
                         ))}
                     </div>
