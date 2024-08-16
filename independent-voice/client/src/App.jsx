@@ -12,6 +12,7 @@ import EditNew from './components/edit-new/EditNew';
 import { AuthProvider } from './contexts/AuthContext';
 import CreateNew from './components/create-new/CreateNew';
 import MyNews from './components/my-news/MyNews';
+import NotFound from './components/not-found/NotFound';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/EditNew/:articleId" element={<EditNew />} />
           <Route path="/CreateNew" element={<CreateNew />} />
           <Route path="/MyNews" element={<MyNews />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
     </AuthProvider>
   )
